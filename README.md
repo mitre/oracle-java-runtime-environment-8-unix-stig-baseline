@@ -41,7 +41,7 @@ To contribute, please review the [contribution guidelines](https://github.com/mi
 
 ## License 
 
-This project is licensed under the terms of the [Apache 2.0 license](https://github.com/mitre/microsoft-windows-2012r2-memberserver-stig-baseline/blob/master/LICENSE.md).
+This project is licensed under the terms of the [Apache 2.0 license](https://github.com/mitre/jre-8-stig-baseline/blob/master/LICENSE.md).
 
 ### NOTICE
 
