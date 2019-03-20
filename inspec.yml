@@ -1,0 +1,18 @@
+name: jre-8-stig-baseline
+title: STIG Baseline for JRE 8
+maintainer: MITRE InSpec Team
+copyright: The MITRE Corporation, 2018
+copyright_email: opensource@mitre.org
+summary: The JRE 8 InSpec profile.
+license: Apache-2.0
+Description: An InSpec Compliance Profile. 
+version: 0.1.0
+supports:
+  platform: os
+inspec_version: "~> 3.0"
+
+attributes:
+  - name: is_on_siprnet
+    description: 'Set to true if this system is on the SIPRNET'
+    type: boolean
+    default: false
