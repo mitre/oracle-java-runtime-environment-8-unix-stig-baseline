@@ -17,7 +17,7 @@ Runs this profile over __ssh__ to the host at IP address __hostip__ as a privile
     
 The following is an example of using this command. 
 
-    inspec exec https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline.git -t ssh://$myhost --user 'inspec_svc' --password=Pa55w0rd --sudo --sudo-password=sudoPa55w0rd --reporter cli json:redhat6-results.json
+    inspec exec https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline.git -t ssh://$myhost --user 'inspec_svc' --password=Pa55w0rd --sudo --sudo-password=sudoPa55w0rd --reporter cli json:jre8-results.json
 
 ## Viewing the JSON Results
 
