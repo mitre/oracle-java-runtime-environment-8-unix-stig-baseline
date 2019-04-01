@@ -1,4 +1,4 @@
-name: jre-8-stig-baseline
+name: oracle-java-runtime-environment-8-unix-stig-baseline
 title: STIG Baseline for JRE 8
 maintainer: MITRE InSpec Team
 copyright: The MITRE Corporation, 2018
