@@ -1,4 +1,4 @@
-# jre-8-stig-baseline
+# oracle-java-runtime-environment-8-unix-stig-baseline
 
 InSpec profile to validate the secure configuration of JRE 8, against [DISA](https://iase.disa.mil/stigs/)'s **JRE 8 Security Technical Implementation Guide (STIG)**.
 
@@ -11,13 +11,13 @@ Latest versions and installation options are available at the [InSpec](http://in
 
 ## Running This Profile
 
-    inspec exec https://github.com/mitre/jre-8-stig-baseline/archive/master.tar.gz -t winrm://<hostip> --user '<admin-account>' --password=<password> --reporter cli json:<filename>.json
+inspec exec https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline.git --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --sudo --sudo-password=<sudo_password_for_target_if_required> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
 
-Runs this profile over __winrm__ to the host at IP address __hostip__ as a privileged user account (i.e., an account with administrative privileges), reporting results to both the command line interface (cli) and to a machine-readable JSON file. 
+Runs this profile over __ssh__ to the host at IP address __hostip__ as a privileged user account (i.e., an account with administrative privileges), reporting results to both the command line interface (cli) and to a machine-readable JSON file. 
     
 The following is an example of using this command. 
 
-    inspec exec https://github.com/mitre/jre-8-stig-baseline/archive/master.tar.gz -t winrm://$winhostip --user 'Administrator' --password=Pa55w0rd --reporter cli json:jre-8-stig-baseline-results.json
+    inspec exec https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline.git -t ssh://$myhost --user 'inspec_svc' --password=Pa55w0rd --sudo --sudo-password=sudoPa55w0rd --reporter cli json:redhat6-results.json
 
 ## Viewing the JSON Results
 
@@ -26,7 +26,7 @@ The JSON results output file can be loaded into __[heimdall-lite](https://mitre.
 The JSON InSpec results file may also be loaded into a __full heimdall server__, allowing for additional functionality such as to store and compare multiple profile runs.
 
 ## Contributing and Getting Help
-To report a bug or feature request, please open an [issue](https://github.com/mitre/jre-8-stig-baseline/issues/new).
+To report a bug or feature request, please open an [issue](https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline/issues/new).
 
 For other help, please send a message to [inspec@mitre.org](mailto:inspec@mitre.org).
 
@@ -41,7 +41,7 @@ To contribute, please review the [contribution guidelines](https://github.com/mi
 
 ## License 
 
-This project is licensed under the terms of the [Apache 2.0 license](https://github.com/mitre/jre-8-stig-baseline/blob/master/LICENSE.md).
+This project is licensed under the terms of the [Apache 2.0 license](https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline/blob/master/LICENSE.md).
 
 ### NOTICE
 
