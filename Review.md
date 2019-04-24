@@ -5,7 +5,7 @@
 ||InSpec syntax checker|Rony Xavier|*|*|
 ||Local commands focused on target not the runner [2]|Rony Xavier|*|*|
 |Quality checks|Alignment (including tagging) to original<br> standard (i.e. STIG, CIS Benchmark, NIST Tags)|Rony Xavier|*|*|
-||Control robustness (can the control be improved to make it less brittle - not necessarily a blocker on initial releases)|Rony Xavier|*|#1#2|
+||Control robustness (can the control be improved to make it less brittle - not necessarily a blocker on initial releases)|Rony Xavier|*|#1#2#5|
 ||Descriptive output for findings details (review JSON for findings information that may be confusing to SCA like NilCLass, etc.)|Rony Xavier|*|*|
 ||Documentation quality (i.e. README)<br> novice level instructions including prerequisites|Rony Xavier|*|*|
 ||Consistency across other profile conventions |Rony Xavier|*|*|
