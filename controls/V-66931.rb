@@ -2,7 +2,7 @@ is_on_siprnet = attribute('is_on_siprnet')
 control 'V-66931' do
   title 'Oracle JRE 8 must lock the option to enable users to check publisher
   certificates for revocation'
-  desc  "
+  desc "
     Certificates may be revoked due to improper issuance, compromise of the
     certificate, and failure to adhere to policy. Therefore, any certificate
     found revoked on a CRL or via Online Certificate Status Protocol (OCSP)

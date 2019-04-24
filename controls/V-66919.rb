@@ -2,7 +2,7 @@ is_on_siprnet = attribute('is_on_siprnet')
 control 'V-66919' do
   title 'Oracle JRE 8 must lock the dialog enabling users to grant permissions
   to execute signed content from an untrusted authority'
-  desc  "
+  desc "
     Java applets exist both signed and unsigned. Even for signed applets, there
     can be many sources, some of which may be purveyors of malware. Applet
     sources considered trusted can have their information populated into the

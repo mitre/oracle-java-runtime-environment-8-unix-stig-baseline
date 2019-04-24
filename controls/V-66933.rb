@@ -1,7 +1,7 @@
 control 'V-66933' do
   title 'Oracle JRE 8 must prompt the user for action prior to executing mobile
   code'
-  desc  "
+  desc "
     Mobile code can cause damage to the system. It can execute without explicit
     action from, or notification to, a user. Actions enforced before executing
     mobile code include, for example, prompting users prior to opening email

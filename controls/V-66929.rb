@@ -2,7 +2,7 @@ is_on_siprnet = attribute('is_on_siprnet')
 control 'V-66929' do
   title 'Oracle JRE 8 must enable the dialog to enable users to check publisher
   certificates for revocation'
-  desc  "
+  desc "
     A certificate revocation list is a directory which contains a list of
     certificates that have been revoked for various reasons. Certificates may be
     revoked due to improper issuance, compromise of the certificate, and failure

@@ -1,7 +1,7 @@
 control 'V-66935' do
   title 'Oracle JRE 8 must remove previous versions when the latest version is
   installed'
-  desc  "
+  desc "
     Previous versions of software components that are not removed from the
     information system after updates have been installed may be exploited by
     adversaries. Some information technology products may remove older versions

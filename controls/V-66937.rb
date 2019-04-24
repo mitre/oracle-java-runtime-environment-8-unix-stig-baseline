@@ -1,7 +1,7 @@
 control 'V-66937' do
   title 'The version of Oracle JRE 8 running on the system must be the most
   current available'
-  desc  "
+  desc "
    Oracle JRE 8 is being continually updated by the vendor in order to address
    identified security vulnerabilities. Running an older version of the JRE can
    introduce security vulnerabilities to the system.
