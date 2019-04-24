@@ -1,26 +1,65 @@
-| Check          | Sub-check                                                                         | Who | Completion Date | Issue #'s |
-|----------------|-----------------------------------------------------------------------------------|-----|-----------------|-----------|
-|Logical checks| Proper profile directory structure	[1]						|Rony Xavier|*|*|
-||JSON output review (e.g., pass/fail on ,<br>hardened, not hardened, edge cases, etc.)|Rony Xavier|*|*|
-||InSpec syntax checker|Rony Xavier|*|*|
-||Local commands focused on target not the runner [2]|Rony Xavier|*|*|
-|Quality checks|Alignment (including tagging) to original<br> standard (i.e. STIG, CIS Benchmark, NIST Tags)|Rony Xavier|*|*|
-||Control robustness (can the control be improved to make it less brittle - not necessarily a blocker on initial releases)|Rony Xavier|*|#1#2|
-||Descriptive output for findings details (review JSON for findings information that may be confusing to SCA like NilCLass, etc.)|Rony Xavier|*|*|
-||Documentation quality (i.e. README)<br> novice level instructions including prerequisites|Rony Xavier|*|*|
-||Consistency across other profile conventions |Rony Xavier|*|*|
-||Spelling, grammar,linting (e.g., rubocop, etc.)|Rony Xavier|04/24/2019|#3|
-||Removing debugging documentation and code|Rony Xavier|*|*|
-| Error handling |“Profile Error” containment: “null” responses <br>should only happen if InSpec is run with incorrect privileges (e.g., code fails to reach a describe statement for every control. inspec check can do this. It will say no defined tests)|Rony Xavier|*|*|
-||Slowing the target (e.g. filling up disk, CPU spikes)|Rony Xavier|*|*|
-||Check for risky commands (e.g. rm, del, purge, etc.)|Rony Xavier|*|*|
-||Check for “stuck” situations (e.g., profile goes on forever due to infinite loop, very large data sets, etc.)|Rony Xavier|*|*|
+# oracle-java-runtime-environment-8-unix-stig-baseline
 
+InSpec profile to validate the secure configuration of JRE 8, against [DISA](https://iase.disa.mil/stigs/)'s **JRE 8 Security Technical Implementation Guide (STIG)**.
 
-[1] https://www.inspec.io/docs/reference/profiles/
+## Getting Started  
+It is intended and recommended that InSpec run this profile from a __"runner"__ host (such as a DevOps orchestration server, an administrative management system, or a developer's workstation/laptop) against the target remotely over __winrm__.
 
-[2] https://www.inspec.io/docs/reference/style/ (see "Avoid Shelling Out")
+__For the best security of the runner, always install on the runner the _latest version_ of InSpec and supporting Ruby language components.__
 
-Another tip is to cat all the controls into a single file so you don't have to open every individual file and try to keep track of where you are and which one is next.
+Latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
 
-*** A completion date is entered in a row when all non-enhancement issues are resolved for that review row.
+## Running This Profile
+
+inspec exec https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline.git --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --sudo --sudo-password=<sudo_password_for_target_if_required> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+
+Runs this profile over __ssh__ to the host at IP address __hostip__ as a privileged user account (i.e., an account with administrative privileges), reporting results to both the command line interface (cli) and to a machine-readable JSON file.
+
+The following is an example of using this command.
+
+    inspec exec https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline.git -t ssh://$myhost --user 'inspec_svc' --password=Pa55w0rd --sudo --sudo-password=sudoPa55w0rd --reporter cli json:jre8-results.json
+
+## Viewing the JSON Results
+
+The JSON results output file can be loaded into __[heimdall-lite](https://mitre.github.io/heimdall-lite/)__ for a user-interactive, graphical view of the InSpec results.
+
+The JSON InSpec results file may also be loaded into a __full heimdall server__, allowing for additional functionality such as to store and compare multiple profile runs.
+
+## Contributing and Getting Help
+To report a bug or feature request, please open an [issue](https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline/issues/new).
+
+For other help, please send a message to [inspec@mitre.org](mailto:inspec@mitre.org).
+
+To contribute, please review the [contribution guidelines](https://github.com/mitre/docs-mitre-inspec/blob/master/CONTRIBUTING.md).
+
+## Authors
+- Alicia Sturtevant
+
+## Special Thanks
+
+- The MITRE InSpec Team
+
+## License
+
+This project is licensed under the terms of the [Apache 2.0 license](https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline/blob/master/LICENSE.md).
+
+### NOTICE
+
+© 2019 The MITRE Corporation.  
+
+Approved for Public Release; Distribution Unlimited. Case Number 18-3678.  
+
+### NOTICE
+MITRE hereby grants express written permission to use, reproduce, distribute, modify, and otherwise leverage this software to the extent permitted by the licensed terms provided in the LICENSE.md file included with this project.
+
+### NOTICE  
+
+This software was produced for the U. S. Government under Contract Number HHSM-500-2012-00008I, and is subject to Federal Acquisition Regulation Clause 52.227-14, Rights in Data-General.  
+
+No other use other than that granted to the U. S. Government, or to those acting on behalf of the U. S. Government under that Clause is authorized without the express written permission of The MITRE Corporation.
+
+For further information, please contact The MITRE Corporation, Contracts Management Office, 7515 Colshire Drive, McLean, VA  22102-7539, (703) 983-6000.  
+
+### NOTICE
+
+DISA STIGs are published by DISA IASE, see: https://iase.disa.mil/Pages/privacy_policy.aspx   
