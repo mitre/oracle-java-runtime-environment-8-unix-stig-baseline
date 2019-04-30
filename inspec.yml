@@ -16,3 +16,9 @@ attributes:
     description: 'Set to true if this system is on the SIPRNET'
     type: boolean
     default: false
+
+  - name: java_version
+    description: 'Java version allowed'
+    type: string
+    default: '1.8.0_212'
+

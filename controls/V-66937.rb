@@ -35,8 +35,10 @@ control 'V-66937' do
   jre-<version>-fcs Self-extracting file uninstall: # rm -r jre<version> Perform
   for all out of date instances of JRE.'
 
-  describe 'The number of java updates available' do
-    subject { command('yum update java-1.8.0-openjdk').stdout }
-    it { should match(/No packages marked for update/) }
+  java_cmd = command('java -version').stderr&.lines&.first&.strip&.split&.last
+  describe 'The java version installed' do
+    it "should be attribute('java_version" do
+      expect(java_cmd).to(match attribute('java_version'))
+    end
   end
 end
