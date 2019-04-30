@@ -39,22 +39,9 @@ control 'V-66935' do
   jre-<version>-fcs Self-extracting file uninstall: # rm -r jre<version> Perform
   for all out of date instances of JRE.'
 
-  get_previous_jreversions_installed = command('rpm -qa | grep java- | grep -v ^java-1.8 |  rpm -qa | grep java- | grep -v ^java-1.8 | wc -l').stdout.strip
-  get_previous_jreversions_installed2 = command("alternatives --list | grep '^java\s' | grep -v java-1.8 | wc -l").stdout.strip
-
-  describe.one do
-    describe 'The number of previous versions of JRE installed' do
-      subject { get_previous_jreversions_installed }
-      it { should cmp 0 }
-    end
-
-    describe 'The number of jre versions installed' do
-      subject { command('ps -ef | grep -I jre | wc -l').stdout }
-      it { should eq 1 }
-    end
-    describe 'The number of previous versions of JRE installed' do
-      subject { get_previous_jreversions_installed2 }
-      it { should eq '0' }
-    end
+  describe 'A manual review is required to ensure Oracle JRE 8 removes previous versions when the latest version is
+  installed' do
+  skip 'A manual review is required to ensure Oracle JRE 8 removes previous versions when the latest version is
+    installed'
   end
 end
