@@ -29,13 +29,13 @@ control 'V-66933' do
   “deployment.insecure.jres=PROMPT” to the deployment.properties file. Add the
   key “deployment.insecure.jres.locked” to the deployment.properties file.'
 
-  describe file('/etc/.java/deployment/deployment.properties') do
+  describe file(attribute('deployment_properties_file')) do
     its('content') { should match(/deployment.insecure.jres=PROMPT/) }
   end
-  describe file('/etc/.java/deployment/deployment.properties') do
+  describe file(attribute('deployment_properties_file')) do
     its('content') { should match(/deployment.insecure.jres.locked/) }
   end
-  describe file('/etc/.java/deployment/deployment.properties') do
+  describe file(attribute('deployment_properties_file')) do
     its('content') { should_not match(/deployment.insecure.jres=NEVER/) }
   end
 end

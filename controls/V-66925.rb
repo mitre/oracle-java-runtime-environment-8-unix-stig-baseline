@@ -34,7 +34,7 @@ control 'V-66925' do
   “deployment.user.security.exception.sites=/etc/.java/deployment/exception.sites”
   to the deployment.properties file.'
 
-  describe file('/etc/.java/deployment/deployment.properties') do
+  describe file(attribute('deployment_properties_file')) do
     its('content') { should match(%r{deployment.user.security.exception.sites=/etc/.java/deployment/exception.sites}) }
   end
 end

@@ -24,7 +24,7 @@ control 'V-66721' do
 
   /etc/.java/deployment/deployment.config"
 
-  describe file('/etc/.java/deployment/deployment.config') do
+  describe file(attribute('deployment_config_file')) do
     it { should exist }
   end
 end

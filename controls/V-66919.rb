@@ -44,10 +44,10 @@ control 'V-66919' do
       skip 'If the system is on the SIPRNET, therefore this requirement is NA'
     end
   else
-    describe file('/etc/.java/deployment/deployment.properties') do
+    describe file(attribute('deployment_properties_file')) do
       its('content') { should match(/deployment.security.askgrantdialog.show=false/) }
     end
-    describe file('/etc/.java/deployment/deployment.properties') do
+    describe file(attribute('deployment_properties_file')) do
       its('content') { should match(/deployment.security.askgrantdialog.show.locked/) }
     end
   end

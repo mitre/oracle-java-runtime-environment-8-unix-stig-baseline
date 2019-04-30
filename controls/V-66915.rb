@@ -26,10 +26,10 @@ control 'V-66915' do
   “deployment.webjava.enabled=true” to the deployment.properties file. Add the
   key “deployment.webjava.enabled.locked” to the deployment.properties file.'
 
-  describe file('/etc/.java/deployment/deployment.properties') do
+  describe file(attribute('deployment_properties_file')) do
     its('content') { should match(/deployment.webjava.enabled=true/) }
   end
-  describe file('/etc/.java/deployment/deployment.properties') do
+  describe file(attribute('deployment_properties_file')) do
     its('content') { should match(/deployment.webjava.enabled.locked/) }
   end
 end

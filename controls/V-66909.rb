@@ -39,10 +39,10 @@ control 'V-66909' do
   use of forward slashes. Add the key deployment.system.config.mandatory=true to
   the deployment.config file.'
 
-  describe file('/etc/.java/deployment/deployment.config') do
+  describe file(attribute('deployment_config_file')) do
     its('content') { should match(%r{deployment.system.config=\/etc\/.java/deployment\/deployment.properties}) }
   end
-  describe file('/etc/.java/deployment/deployment.config') do
+  describe file(attribute('deployment_config_file')) do
     its('content') { should match(/deployment.system.config.mandatory=true/) }
   end
 end

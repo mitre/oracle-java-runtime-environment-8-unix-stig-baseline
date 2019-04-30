@@ -46,7 +46,7 @@ control 'V-66927' do
       skip 'If the system is on the SIPRNET, therefore this requirement is NA'
     end
   else
-    describe file('/etc/.java/deployment/exception.sites') do
+    describe file(attribute('deployment_exception_sites_file')) do
       it { should exist }
     end
   end

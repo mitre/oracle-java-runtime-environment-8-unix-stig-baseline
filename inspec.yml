@@ -22,3 +22,19 @@ attributes:
     type: string
     default: '1.8.0_212'
 
+  - name: deployment_config_file
+    description: 'Java deployment.config file'
+    type: string
+    default: '/etc/.java/deployment/deployment.config'
+
+  - name: deployment_properties_file
+    description: 'Java deployment.properties file'
+    type: string
+    default: '/etc/.java/deployment/deployment.properties'
+
+  - name: deployment_exception_sites_file
+    description: 'Java deployment/exception.sites file'
+    type: string
+    default: '/etc/.java/deployment/exception.sites'
+
+

@@ -42,10 +42,10 @@ control 'V-66931' do
       skip 'If the system is on the SIPRNET, therefore this requirement is NA'
     end
   else
-    describe file('/etc/.java/deployment/deployment.properties') do
+    describe file(attribute('deployment_properties_file')) do
       its('content') { should match(/deployment.security.revocation.check=ALL_CERTIFICATES/) }
     end
-    describe file('/etc/.java/deployment/deployment.properties') do
+    describe file(attribute('deployment_properties_file')) do
       its('content') { should match(/deployment.security.revocation.check.locked/) }
     end
   end

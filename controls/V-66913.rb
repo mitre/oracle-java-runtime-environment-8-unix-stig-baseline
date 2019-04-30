@@ -25,10 +25,10 @@ control 'V-66913' do
   “deployment.security.level=VERY_HIGH” to the deployment.properties file. Add
   the key “deployment.security.level.locked” to the deployment.properties file.'
 
-  describe file('/etc/.java/deployment/deployment.properties') do
+  describe file(attribute('deployment_properties_file')) do
     its('content') { should match(/deployment.security.level=VERY_HIGH/) }
   end
-  describe file('/etc/.java/deployment/deployment.properties') do
+  describe file(attribute('deployment_properties_file')) do
     its('content') { should match(/deployment.security.level.locked/) }
   end
 end

@@ -34,10 +34,10 @@ control 'V-66923' do
   Add the key “deployment.security.blacklist.check.locked” to the
   deployment.properties file.'
 
-  describe file('/etc/.java/deployment/deployment.properties') do
+  describe file(attribute('deployment_properties_file')) do
     its('content') { should match(/deployment.security.blacklist.check=true/) }
   end
-  describe file('/etc/.java/deployment/deployment.properties') do
+  describe file(attribute('deployment_properties_file')) do
     its('content') { should match(/deployment.security.blacklist.check.locked/) }
   end
 end
