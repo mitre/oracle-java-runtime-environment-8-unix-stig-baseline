@@ -2,8 +2,9 @@
 
 InSpec profile to validate the secure configuration of JRE 8, against [DISA](https://iase.disa.mil/stigs/)'s JRE 8 Security Technical Implementation Guide (STIG).
 
+#### Container-Ready: Profile updated to adapt checks when the running against a containerized instance of JRE8, based on reference container: (docker pull registry1.dso.mil/ironbank/opensource/gradle/gradle-jre8@latest)
+
 ## Getting Started  
-It is intended and recommended that InSpec run this profile from a __"runner"__ host (such as a DevOps orchestration server, an administrative management system, or a developer's workstation/laptop) against the target remotely over __winrm__.
 
 __For the best security of the runner, always install on the runner the _latest version_ of InSpec and supporting Ruby language components.__
 
@@ -31,9 +32,13 @@ deployment_exception_sites_file: ''
 
 # Running This Baseline Directly from Github
 
+Against a _**locally-hosted**_ instance (i.e., InSpec installed on the target)
 ```
-# How to run
-inspec exec https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline/archive/master.tar.gz --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --sudo --sudo-password=<sudo_password_for_target_if_required> --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+inspec exec https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline/archive/master.tar.gz --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --reporter json:<path_to_your_output_file/name_of_your_output_file.json>
+```
+Against a _**docker-containerized**_ instance (i.e., InSpec installed on the node hosting the container):
+```bash
+inspec exec https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline/archive/master.tar.gz -t docker://instance_id --input-file <path_to_your_input_file/name_of_your_input_file.yml> --reporter json:<path_to_your_output_file/name_of_your_output_file.json> 
 ```
 
 ### Different Run Options
